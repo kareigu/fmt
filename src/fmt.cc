@@ -90,10 +90,8 @@ export module fmt;
 #include "fmt/printf.h"
 #include "fmt/xchar.h"
 
-// gcc doesn't yet implement private module fragments
-#if !FMT_GCC_VERSION
+
 module : private;
-#endif
 
 #include "format.cc"
 #include "os.cc"

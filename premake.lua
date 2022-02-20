@@ -17,12 +17,16 @@ project "fmt"
     "include/"
   }
 
+	compileas "Module"
+
 
 	--filter "system:linux"
 
 
 	filter "system:windows"
 		systemversion "latest"
+		defines {
+		}
 
 	filter "configurations:Debug"
 		runtime "Debug"

@@ -1471,12 +1471,13 @@ inline std::chrono::duration<Rep, std::milli> get_milliseconds(
 #endif
 }
 
+
 // Counts the number of fractional digits in the range [0, 18] according to the
 // C++20 spec. If more than 18 fractional digits are required then returns 6 for
 // microseconds precision.
 template <long long Num, long long Den, int N = 0,
           bool Enabled =
-              (N < 19) && (Num <= std::numeric_limits<long long>::max() / 10)>
+              (N < 19) && (Num <= (std::numeric_limits<long long>::max)() / 10)>
 struct count_fractional_digits {
   static constexpr int value =
       Num % Den == 0 ? N : count_fractional_digits<Num * 10, Den, N + 1>::value;
