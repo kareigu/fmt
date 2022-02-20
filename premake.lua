@@ -1,6 +1,7 @@
 project "fmt"
 	kind "StaticLib"
 	language "C++"
+	cppdialect "C++20"
 	staticruntime "off"
 
 	targetdir ("build/bin/%{prj.name}")

@@ -25,6 +25,7 @@ virtualenv
 *.so*
 *.xcodeproj
 *.zip
+*.vcxproj*
 cmake_install.cmake
 CPack*.cmake
 fmt-*.cmake
