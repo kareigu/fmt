@@ -1,7 +1,6 @@
 project "fmt"
 	kind "StaticLib"
 	language "C++"
-	cppdialect "C++20"
 	staticruntime "off"
 
 	targetdir ("build/bin/%{prj.name}")
@@ -20,10 +19,13 @@ project "fmt"
 	compileas "Module"
 
 
-	--filter "system:linux"
+	filter "system:linux"
+		cppdialect "C++2a"
+		systemversion "latest"
 
 
 	filter "system:windows"
+		cppdialect "C++20"
 		systemversion "latest"
 		defines {
 		}
