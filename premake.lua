@@ -27,6 +27,8 @@ project "fmt"
     compileas "Module"
     files {
       "src/fmt.cc",
+	 "src/os.cc",
+	 "src/format.cc",
     }
 
 	filter "configurations:Debug"
