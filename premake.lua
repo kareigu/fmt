@@ -6,29 +6,28 @@ project "fmt"
 	targetdir ("build/bin/%{prj.name}")
 	objdir ("build/obj/%{prj.name}")
 
-	files {
-		"src/fmt.cc",
-    "src/format.cc",
-    "src/os.cc"
-	}
+
 
   includedirs {
     "include/"
   }
 
-	compileas "Module"
-
 
 	filter "system:linux"
 		cppdialect "C++2a"
 		systemversion "latest"
+    files {
+      "src/format.cc",
+    }
 
 
 	filter "system:windows"
 		cppdialect "C++20"
 		systemversion "latest"
-		defines {
-		}
+    compileas "Module"
+    files {
+      "src/fmt.cc",
+    }
 
 	filter "configurations:Debug"
 		runtime "Debug"
